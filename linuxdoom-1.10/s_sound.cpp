@@ -467,7 +467,7 @@ void S_UpdateSounds(void *listener_p) {
                 // check non-local sounds for distance clipping
                 //  or modify their params
                 if (c->origin && listener_p != c->origin) {
-                    audible = S_AdjustSoundParams(listener, c->origin, &volume, &sep, &pitch);
+                    audible = S_AdjustSoundParams(listener, static_cast<mobj_t*>(c->origin) , &volume, &sep, &pitch);
 
                     if (!audible) {
                         S_StopChannel(cnum);

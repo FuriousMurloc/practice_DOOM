@@ -80,7 +80,12 @@ doomdata_t reboundstore;
 //
 //
 //
-int NetbufferSize(void) { return (int)&(((doomdata_t *)0)->cmds[netbuffer->numtics]); }
+int NetbufferSize(void) {
+    return 3; // TODO: FIX this,no entenc perque fa lode
+              // basicament esta mirant la mida a pelo, fix quan arregli les
+              // estructures de dades
+    // return &(((doomdata_t *)0)->cmds[netbuffer->numtics]);
+}
 
 //
 // Checksum
@@ -95,8 +100,8 @@ unsigned NetbufferChecksum(void) {
 #ifdef NORMALUNIX
     return 0; // byte order problems
 #endif
-
-    l = (NetbufferSize() - (int)&(((doomdata_t *)0)->retransmitfrom)) / 4;
+    // TODO: Same as before
+    l = (NetbufferSize() - 4) /*&(((doomdata_t *)0)->retransmitfrom))*/ / 4;
     for (i = 0; i < l; i++)
         c += ((unsigned *)&netbuffer->retransmitfrom)[i] * (i + 1);
 
@@ -404,7 +409,7 @@ void CheckAbort(void) {
         I_StartTic();
 
     I_StartTic();
-    for (; eventtail != eventhead; eventtail = (++eventtail) & (MAXEVENTS - 1)) {
+    for (; eventtail != eventhead; eventtail = (eventtail + 1) & (MAXEVENTS - 1)) {
         ev = &events[eventtail];
         if (ev->type == ev_keydown && ev->data1 == KEY_ESCAPE)
             I_Error("Network game synchronization aborted.");
@@ -431,7 +436,7 @@ void D_ArbitrateNetStart(void) {
             if (netbuffer->checksum & NCMD_SETUP) {
                 if (netbuffer->player != VERSION)
                     I_Error("Different DOOM versions cannot play a net game!");
-                startskill = netbuffer->retransmitfrom & 15;
+                startskill = static_cast<skill_t>(netbuffer->retransmitfrom & 15);
                 deathmatch = (netbuffer->retransmitfrom & 0xc0) >> 6;
                 nomonsters = (netbuffer->retransmitfrom & 0x20) > 0;
                 respawnparm = (netbuffer->retransmitfrom & 0x10) > 0;

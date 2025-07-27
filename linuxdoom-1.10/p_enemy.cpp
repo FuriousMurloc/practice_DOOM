@@ -314,7 +314,7 @@ void P_NewChaseDir(mobj_t *actor) {
     if (!actor->target)
         I_Error("P_NewChaseDir: called with no target");
 
-    olddir = actor->movedir;
+    olddir = static_cast<dirtype_t>(actor->movedir);
     turnaround = opposite[olddir];
 
     deltax = actor->target->x - actor->x;
@@ -345,7 +345,7 @@ void P_NewChaseDir(mobj_t *actor) {
     if (P_Random() > 200 || abs(deltay) > abs(deltax)) {
         tdir = d[1];
         d[1] = d[2];
-        d[2] = tdir;
+        d[2] = static_cast<dirtype_t>(tdir);
     }
 
     if (d[1] == turnaround)
@@ -416,6 +416,7 @@ boolean P_LookForPlayers(mobj_t *actor, boolean allaround) {
     int c;
     int stop;
     player_t *player;
+    [[maybe_unused]]
     sector_t *sector;
     angle_t an;
     fixed_t dist;
@@ -545,7 +546,7 @@ seeyou:
             S_StartSound(actor, sound);
     }
 
-    P_SetMobjState(actor, actor->info->seestate);
+    P_SetMobjState(actor, static_cast<statenum_t>(actor->info->seestate));
 }
 
 //
@@ -583,7 +584,7 @@ void A_Chase(mobj_t *actor) {
         if (P_LookForPlayers(actor, true))
             return; // got a new target
 
-        P_SetMobjState(actor, actor->info->spawnstate);
+        P_SetMobjState(actor, static_cast<statenum_t>(actor->info->spawnstate));
         return;
     }
 
@@ -600,7 +601,7 @@ void A_Chase(mobj_t *actor) {
         if (actor->info->attacksound)
             S_StartSound(actor, actor->info->attacksound);
 
-        P_SetMobjState(actor, actor->info->meleestate);
+        P_SetMobjState(actor, static_cast<statenum_t>(actor->info->meleestate));
         return;
     }
 
@@ -613,7 +614,7 @@ void A_Chase(mobj_t *actor) {
         if (!P_CheckMissileRange(actor))
             goto nomissile;
 
-        P_SetMobjState(actor, actor->info->missilestate);
+        P_SetMobjState(actor, static_cast<statenum_t>(actor->info->missilestate));
         actor->flags |= MF_JUSTATTACKED;
         return;
     }
@@ -722,7 +723,7 @@ void A_CPosRefire(mobj_t *actor) {
         return;
 
     if (!actor->target || actor->target->health <= 0 || !P_CheckSight(actor, actor->target)) {
-        P_SetMobjState(actor, actor->info->seestate);
+        P_SetMobjState(actor, static_cast<statenum_t>(actor->info->seestate));
     }
 }
 
@@ -734,7 +735,7 @@ void A_SpidRefire(mobj_t *actor) {
         return;
 
     if (!actor->target || actor->target->health <= 0 || !P_CheckSight(actor, actor->target)) {
-        P_SetMobjState(actor, actor->info->seestate);
+        P_SetMobjState(actor, static_cast<statenum_t>(actor->info->seestate));
     }
 }
 
@@ -1009,7 +1010,7 @@ void A_VileChase(mobj_t *actor) {
                     S_StartSound(corpsehit, sfx_slop);
                     info = corpsehit->info;
 
-                    P_SetMobjState(corpsehit, info->raisestate);
+                    P_SetMobjState(corpsehit, static_cast<statenum_t>(info->raisestate));
                     corpsehit->height <<= 2;
                     corpsehit->flags = info->flags;
                     corpsehit->health = info->spawnhealth;
@@ -1644,7 +1645,7 @@ void A_SpawnFly(mobj_t *mo) {
 
     newmobj = P_SpawnMobj(targ->x, targ->y, targ->z, type);
     if (P_LookForPlayers(newmobj, true))
-        P_SetMobjState(newmobj, newmobj->info->seestate);
+        P_SetMobjState(newmobj, static_cast<statenum_t>(newmobj->info->seestate));
 
     // telefrag anything in this spot
     P_TeleportMove(newmobj, newmobj->x, newmobj->y);

@@ -61,7 +61,7 @@ static const char rcsid[] = "$Id: i_unix.c,v 1.5 1997/02/03 22:45:10 b1 Exp $";
 #ifdef SNDSERV
 // Separate sound server process.
 FILE *sndserver = 0;
-char *sndserver_filename = "./sndserver ";
+const char *sndserver_filename = "./sndserver ";
 #elif SNDINTR
 
 // Update all 30 millisecs, approx. 30fps synchronized.
@@ -471,9 +471,9 @@ void I_UpdateSound(void) {
 
     // Mix current sound data.
     // Data, from raw sound, for right and left.
-    register unsigned int sample;
-    register int dl;
-    register int dr;
+    unsigned int sample;
+    int dl;
+    int dr;
 
     // Pointers in global mixbuffer, left, right, end.
     signed short *leftout;

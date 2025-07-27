@@ -25,7 +25,10 @@
 #ifndef __Z_ZONE__
 #define __Z_ZONE__
 
+#include "doomtype.h"
+#include "i_system.h"
 #include <stdio.h>
+#include <string>
 
 //
 // ZONE MEMORY
@@ -61,17 +64,23 @@ typedef struct memblock_s {
 } memblock_t;
 
 //
+/*
 // This is used to get the local FILE:LINE info from CPP
 // prior to really call the function in question.
-//
-#define Z_ChangeTag(p, t)                                                                          \
-    {                                                                                              \
-        if (((memblock_t *)((byte *)(p) - sizeof(memblock_t)))->id != 0x1d4a11)                    \
-            I_Error("Z_CT at "__FILE__                                                             \
-                    ":%i",                                                                         \
-                    __LINE__);                                                                     \
-        Z_ChangeTag2(p, t);                                                                        \
-    };
+
+#define Z_ChangeTag(p,t) \
+{ \
+      if (( (memblock_t *)( (byte *)(p) - sizeof(memblock_t)))->id!=0x1d4a11)
+      \
+          I_Error("Z_CT at "__FILE__":%i",__LINE__); \
+          Z_ChangeTag2(p,t); \
+};
+*/
+constexpr void Z_ChangeTag(auto p, int t) {
+    if (((memblock_t *)((byte *)(p) - sizeof(memblock_t)))->id != 0x1d4a11)
+        I_Error(std::string("Z_CT at ").append(__FILE__).append(":%i").c_str(), __LINE__);
+    Z_ChangeTag2(p, t);
+};
 
 #endif
 //-----------------------------------------------------------------------------

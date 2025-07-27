@@ -96,14 +96,12 @@ int UDPsocket(void) {
 //
 void BindToLocalPort(int s, int port) {
     int v;
-    struct sockaddr_in address;
+    sockaddr_in address = {
+        .sin_port = static_cast<short unsigned int>(port), .sin_addr = {INADDR_ANY},
+        //.sin_family = AF_INET,
+    };
 
-    memset(&address, 0, sizeof(address));
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = port;
-
-    v = bind(s, (void *)&address, sizeof(address));
+    v = bindresvport(s, &address);
     if (v == -1)
         I_Error("BindToPort: bind: %s", strerror(errno));
 }
@@ -113,6 +111,7 @@ void BindToLocalPort(int s, int port) {
 //
 void PacketSend(void) {
     int c;
+    UNUSED
     doomdata_t sw;
 
     // byte swap
@@ -131,8 +130,10 @@ void PacketSend(void) {
     }
 
     // printf ("sending %i\n",gametic);
-    c = sendto(sendsocket, &sw, doomcom->datalength, 0, (void *)&sendaddress[doomcom->remotenode],
-               sizeof(sendaddress[doomcom->remotenode]));
+    // todo arreglar el sendto
+    // c = sendto(sendsocket, &sw, doomcom->datalength, 0,
+    //           (void *)&sendaddress[doomcom->remotenode],
+    //           sizeof(sendaddress[doomcom->remotenode]));
 
     //	if (c == -1)
     //		I_Error ("SendPacket error: %s",strerror(errno));
@@ -145,7 +146,7 @@ void PacketGet(void) {
     int i;
     int c;
     struct sockaddr_in fromaddress;
-    int fromlen;
+    unsigned int fromlen;
     doomdata_t sw;
 
     fromlen = sizeof(fromaddress);
@@ -221,7 +222,7 @@ void I_InitNetwork(void) {
     int p;
     struct hostent *hostentry; // host information entry
 
-    doomcom = malloc(sizeof(*doomcom));
+    doomcom = static_cast<doomcom_t *>(malloc(sizeof(*doomcom)));
     memset(doomcom, 0, sizeof(*doomcom));
 
     // set up for network

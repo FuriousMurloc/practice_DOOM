@@ -59,11 +59,11 @@ static const char rcsid[] = "$Id: hu_stuff.c,v 1.4 1997/02/03 16:47:52 b1 Exp $"
 #define HU_INPUTWIDTH 64
 #define HU_INPUTHEIGHT 1
 
-char *chat_macros[] = {HUSTR_CHATMACRO0, HUSTR_CHATMACRO1, HUSTR_CHATMACRO2, HUSTR_CHATMACRO3,
+const char *chat_macros[] = {HUSTR_CHATMACRO0, HUSTR_CHATMACRO1, HUSTR_CHATMACRO2, HUSTR_CHATMACRO3,
                        HUSTR_CHATMACRO4, HUSTR_CHATMACRO5, HUSTR_CHATMACRO6, HUSTR_CHATMACRO7,
                        HUSTR_CHATMACRO8, HUSTR_CHATMACRO9};
 
-char *player_names[] = {HUSTR_PLRGREEN, HUSTR_PLRINDIGO, HUSTR_PLRBROWN, HUSTR_PLRRED};
+const char *player_names[] = {HUSTR_PLRGREEN, HUSTR_PLRINDIGO, HUSTR_PLRBROWN, HUSTR_PLRRED};
 
 char chat_char; // remove later.
 static player_t *plr;
@@ -92,7 +92,7 @@ static boolean headsupactive = false;
 // The actual names can be found in DStrings.h.
 //
 
-char *mapnames[] = // DOOM shareware/registered/retail (Ultimate) names.
+const char *mapnames[] = // DOOM shareware/registered/retail (Ultimate) names.
     {
 
         HUSTR_E1M1, HUSTR_E1M2, HUSTR_E1M3, HUSTR_E1M4, HUSTR_E1M5,
@@ -110,7 +110,7 @@ char *mapnames[] = // DOOM shareware/registered/retail (Ultimate) names.
         "NEWLEVEL", "NEWLEVEL", "NEWLEVEL", "NEWLEVEL", "NEWLEVEL",
         "NEWLEVEL", "NEWLEVEL", "NEWLEVEL", "NEWLEVEL"};
 
-char *mapnames2[] = // DOOM 2 map names.
+const char *mapnames2[] = // DOOM 2 map names.
     {HUSTR_1,  HUSTR_2,  HUSTR_3,  HUSTR_4,  HUSTR_5,  HUSTR_6,  HUSTR_7,  HUSTR_8,  HUSTR_9,
      HUSTR_10, HUSTR_11,
 
@@ -119,7 +119,7 @@ char *mapnames2[] = // DOOM 2 map names.
      HUSTR_21, HUSTR_22, HUSTR_23, HUSTR_24, HUSTR_25, HUSTR_26, HUSTR_27, HUSTR_28, HUSTR_29,
      HUSTR_30, HUSTR_31, HUSTR_32};
 
-char *mapnamesp[] = // Plutonia WAD map names.
+const char *mapnamesp[] = // Plutonia WAD map names.
     {PHUSTR_1,  PHUSTR_2,  PHUSTR_3,  PHUSTR_4,  PHUSTR_5,  PHUSTR_6,
      PHUSTR_7,  PHUSTR_8,  PHUSTR_9,  PHUSTR_10, PHUSTR_11,
 
@@ -129,7 +129,7 @@ char *mapnamesp[] = // Plutonia WAD map names.
      PHUSTR_21, PHUSTR_22, PHUSTR_23, PHUSTR_24, PHUSTR_25, PHUSTR_26,
      PHUSTR_27, PHUSTR_28, PHUSTR_29, PHUSTR_30, PHUSTR_31, PHUSTR_32};
 
-char *mapnamest[] = // TNT WAD map names.
+const char *mapnamest[] = // TNT WAD map names.
     {THUSTR_1,  THUSTR_2,  THUSTR_3,  THUSTR_4,  THUSTR_5,  THUSTR_6,
      THUSTR_7,  THUSTR_8,  THUSTR_9,  THUSTR_10, THUSTR_11,
 
@@ -227,7 +227,7 @@ void HU_Init(void) {
 
     int i;
     int j;
-    char buffer[9];
+    char buffer[32];
 
     if (french)
         shiftxform = french_shiftxform;
@@ -247,7 +247,7 @@ void HU_Stop(void) { headsupactive = false; }
 void HU_Start(void) {
 
     int i;
-    char *s;
+    const char *s;
 
     if (headsupactive)
         HU_Stop();
@@ -406,7 +406,7 @@ char HU_dequeueChatChar(void) {
 boolean HU_Responder(event_t *ev) {
 
     static char lastmessage[HU_MAXLINELENGTH + 1];
-    char *macromessage;
+    const char *macromessage;
     boolean eatkey = false;
     static boolean shiftdown = false;
     static boolean altdown = false;

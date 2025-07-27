@@ -1,0 +1,374 @@
+[
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/am_map.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/am_map.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/am_map.cpp",
+  "output": "CMakeFiles/DOOM.dir/am_map.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/d_items.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/d_items.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/d_items.cpp",
+  "output": "CMakeFiles/DOOM.dir/d_items.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/d_main.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/d_main.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/d_main.cpp",
+  "output": "CMakeFiles/DOOM.dir/d_main.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/d_net.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/d_net.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/d_net.cpp",
+  "output": "CMakeFiles/DOOM.dir/d_net.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/doomdef.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/doomdef.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/doomdef.cpp",
+  "output": "CMakeFiles/DOOM.dir/doomdef.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/doomstat.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/doomstat.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/doomstat.cpp",
+  "output": "CMakeFiles/DOOM.dir/doomstat.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/dstrings.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/dstrings.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/dstrings.cpp",
+  "output": "CMakeFiles/DOOM.dir/dstrings.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/f_finale.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/f_finale.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/f_finale.cpp",
+  "output": "CMakeFiles/DOOM.dir/f_finale.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/f_wipe.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/f_wipe.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/f_wipe.cpp",
+  "output": "CMakeFiles/DOOM.dir/f_wipe.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/g_game.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/g_game.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/g_game.cpp",
+  "output": "CMakeFiles/DOOM.dir/g_game.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/hu_lib.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/hu_lib.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/hu_lib.cpp",
+  "output": "CMakeFiles/DOOM.dir/hu_lib.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/hu_stuff.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/hu_stuff.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/hu_stuff.cpp",
+  "output": "CMakeFiles/DOOM.dir/hu_stuff.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/i_main.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_main.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_main.cpp",
+  "output": "CMakeFiles/DOOM.dir/i_main.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/i_net.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_net.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_net.cpp",
+  "output": "CMakeFiles/DOOM.dir/i_net.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/i_sound.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_sound.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_sound.cpp",
+  "output": "CMakeFiles/DOOM.dir/i_sound.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/i_system.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_system.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_system.cpp",
+  "output": "CMakeFiles/DOOM.dir/i_system.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/i_video.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_video.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/i_video.cpp",
+  "output": "CMakeFiles/DOOM.dir/i_video.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/info.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/info.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/info.cpp",
+  "output": "CMakeFiles/DOOM.dir/info.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_argv.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_argv.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_argv.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_argv.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_bbox.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_bbox.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_bbox.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_bbox.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_cheat.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_cheat.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_cheat.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_cheat.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_fixed.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_fixed.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_fixed.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_fixed.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_menu.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_menu.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_menu.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_menu.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_misc.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_misc.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_misc.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_misc.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_random.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_random.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_random.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_random.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/m_swap.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_swap.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/m_swap.cpp",
+  "output": "CMakeFiles/DOOM.dir/m_swap.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_ceilng.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_ceilng.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_ceilng.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_ceilng.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_doors.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_doors.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_doors.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_doors.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_enemy.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_enemy.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_enemy.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_enemy.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_floor.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_floor.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_floor.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_floor.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_inter.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_inter.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_inter.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_inter.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_lights.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_lights.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_lights.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_lights.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_map.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_map.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_map.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_map.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_maputl.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_maputl.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_maputl.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_maputl.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_mobj.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_mobj.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_mobj.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_mobj.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_plats.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_plats.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_plats.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_plats.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_pspr.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_pspr.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_pspr.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_pspr.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_saveg.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_saveg.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_saveg.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_saveg.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_setup.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_setup.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_setup.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_setup.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_sight.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_sight.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_sight.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_sight.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_spec.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_spec.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_spec.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_spec.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_switch.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_switch.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_switch.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_switch.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_telept.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_telept.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_telept.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_telept.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_tick.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_tick.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_tick.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_tick.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/p_user.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_user.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/p_user.cpp",
+  "output": "CMakeFiles/DOOM.dir/p_user.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_bsp.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_bsp.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_bsp.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_bsp.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_data.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_data.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_data.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_data.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_draw.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_draw.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_draw.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_draw.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_main.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_main.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_main.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_main.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_plane.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_plane.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_plane.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_plane.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_segs.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_segs.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_segs.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_segs.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_sky.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_sky.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_sky.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_sky.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/r_things.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_things.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/r_things.cpp",
+  "output": "CMakeFiles/DOOM.dir/r_things.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/s_sound.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/s_sound.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/s_sound.cpp",
+  "output": "CMakeFiles/DOOM.dir/s_sound.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/sounds.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/sounds.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/sounds.cpp",
+  "output": "CMakeFiles/DOOM.dir/sounds.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/st_lib.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/st_lib.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/st_lib.cpp",
+  "output": "CMakeFiles/DOOM.dir/st_lib.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/st_stuff.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/st_stuff.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/st_stuff.cpp",
+  "output": "CMakeFiles/DOOM.dir/st_stuff.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/tables.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/tables.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/tables.cpp",
+  "output": "CMakeFiles/DOOM.dir/tables.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/v_video.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/v_video.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/v_video.cpp",
+  "output": "CMakeFiles/DOOM.dir/v_video.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/w_wad.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/w_wad.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/w_wad.cpp",
+  "output": "CMakeFiles/DOOM.dir/w_wad.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/wi_stuff.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/wi_stuff.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/wi_stuff.cpp",
+  "output": "CMakeFiles/DOOM.dir/wi_stuff.cpp.o"
+},
+{
+  "directory": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/linux",
+  "command": "/usr/lib64/ccache/c++ -DLINUX -DNORMALUNIX -DUNUSED=[[maybe_unused]]  -std=c++23 -o CMakeFiles/DOOM.dir/z_zone.cpp.o -c /home/aleix/Documents/practice_DOOM/linuxdoom-1.10/z_zone.cpp",
+  "file": "/home/aleix/Documents/practice_DOOM/linuxdoom-1.10/z_zone.cpp",
+  "output": "CMakeFiles/DOOM.dir/z_zone.cpp.o"
+}
+]

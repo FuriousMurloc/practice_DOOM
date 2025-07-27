@@ -120,7 +120,7 @@ animdef_t animdefs[] = {{false, "NUKAGE3", "NUKAGE1", 8},
                         {true, "WFALL4", "WFALL1", 8},
                         {true, "DBRAIN4", "DBRAIN1", 8},
 
-                        {-1}};
+                        {false}};
 
 anim_t anims[MAXANIMS];
 anim_t *lastanim;
@@ -138,7 +138,7 @@ void P_InitPicAnims(void) {
 
     //	Init animation
     lastanim = anims;
-    for (i = 0; animdefs[i].istexture != -1; i++) {
+    for (i = 0; animdefs[i].istexture; i++) {
         if (animdefs[i].istexture) {
             // different episode ?
             if (R_CheckTextureNumForName(animdefs[i].startname) == -1)
@@ -1045,12 +1045,12 @@ int EV_DoDonut(line_t *line) {
         rtn = 1;
         s2 = getNextSector(s1->lines[0], s1);
         for (i = 0; i < s2->linecount; i++) {
-            if ((!s2->lines[i]->flags & ML_TWOSIDED) || (s2->lines[i]->backsector == s1))
+            if ((ML_TWOSIDED & !s2->lines[i]->flags) || (s2->lines[i]->backsector == s1))
                 continue;
             s3 = s2->lines[i]->backsector;
 
             //	Spawn rising slime
-            floor = Z_Malloc(sizeof(*floor), PU_LEVSPEC, 0);
+            floor = static_cast<floormove_t *>(Z_Malloc(sizeof(*floor), PU_LEVSPEC, 0));
             P_AddThinker(&floor->thinker);
             s2->specialdata = floor;
             floor->thinker.function.acp1 = (actionf_p1)T_MoveFloor;
@@ -1064,7 +1064,7 @@ int EV_DoDonut(line_t *line) {
             floor->floordestheight = s3->floorheight;
 
             //	Spawn lowering donut-hole
-            floor = Z_Malloc(sizeof(*floor), PU_LEVSPEC, 0);
+            floor = static_cast<floormove_t *>(Z_Malloc(sizeof(*floor), PU_LEVSPEC, 0));
             P_AddThinker(&floor->thinker);
             s1->specialdata = floor;
             floor->thinker.function.acp1 = (actionf_p1)T_MoveFloor;
@@ -1096,6 +1096,7 @@ line_t *linespeciallist[MAXLINEANIMS];
 void P_SpawnSpecials(void) {
     sector_t *sector;
     int i;
+    UNUSED
     int episode;
 
     episode = 1;

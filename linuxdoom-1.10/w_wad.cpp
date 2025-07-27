@@ -51,7 +51,7 @@ static const char rcsid[] = "$Id: w_wad.c,v 1.5 1997/02/03 16:47:57 b1 Exp $";
 
 // Location of each lump on disk.
 lumpinfo_t *lumpinfo;
-int numlumps;
+unsigned int numlumps;
 
 void **lumpcache;
 
@@ -167,14 +167,14 @@ void W_AddFile(char *filename) {
         header.numlumps = LONG(header.numlumps);
         header.infotableofs = LONG(header.infotableofs);
         length = header.numlumps * sizeof(filelump_t);
-        fileinfo = alloca(length);
+        fileinfo = static_cast<filelump_t*>(alloca(length));
         lseek(handle, header.infotableofs, SEEK_SET);
         read(handle, fileinfo, length);
         numlumps += header.numlumps;
     }
 
     // Fill in lumpinfo
-    lumpinfo = realloc(lumpinfo, numlumps * sizeof(lumpinfo_t));
+    lumpinfo = static_cast<lumpinfo_t*>(realloc(lumpinfo, numlumps * sizeof(lumpinfo_t)));
 
     if (!lumpinfo)
         I_Error("Couldn't realloc lumpinfo");
@@ -218,14 +218,14 @@ void W_Reload(void) {
     lumpcount = LONG(header.numlumps);
     header.infotableofs = LONG(header.infotableofs);
     length = lumpcount * sizeof(filelump_t);
-    fileinfo = alloca(length);
+    fileinfo = static_cast<filelump_t*>(alloca(length));
     lseek(handle, header.infotableofs, SEEK_SET);
     read(handle, fileinfo, length);
 
     // Fill in lumpinfo
     lump_p = &lumpinfo[reloadlump];
 
-    for (i = reloadlump; i < reloadlump + lumpcount; i++, lump_p++, fileinfo++) {
+    for (i = reloadlump; i < static_cast<unsigned int>(reloadlump + lumpcount); i++, lump_p++, fileinfo++) {
         if (lumpcache[i])
             Z_Free(lumpcache[i]);
 
@@ -256,7 +256,7 @@ void W_InitMultipleFiles(char **filenames) {
     numlumps = 0;
 
     // will be realloced as lumps are added
-    lumpinfo = malloc(1);
+    lumpinfo = static_cast<lumpinfo_t*>(malloc(1));
 
     for (; *filenames; filenames++)
         W_AddFile(*filenames);
@@ -266,7 +266,7 @@ void W_InitMultipleFiles(char **filenames) {
 
     // set up caching
     size = numlumps * sizeof(*lumpcache);
-    lumpcache = malloc(size);
+    lumpcache = static_cast<void**>(malloc(size));
 
     if (!lumpcache)
         I_Error("Couldn't allocate lumpcache");
@@ -296,7 +296,7 @@ int W_NumLumps(void) { return numlumps; }
 // Returns -1 if name not found.
 //
 
-int W_CheckNumForName(char *name) {
+int W_CheckNumForName(const char *name) {
     union {
         char s[9];
         int x[2];
@@ -336,7 +336,7 @@ int W_CheckNumForName(char *name) {
 // W_GetNumForName
 // Calls W_CheckNumForName, but bombs out if not found.
 //
-int W_GetNumForName(char *name) {
+int W_GetNumForName(const char *name) {
     int i;
 
     i = W_CheckNumForName(name);
@@ -352,7 +352,7 @@ int W_GetNumForName(char *name) {
 // Returns the buffer size needed to load the given lump.
 //
 int W_LumpLength(int lump) {
-    if (lump >= numlumps)
+    if (static_cast<unsigned int>(lump) >= numlumps)
         I_Error("W_LumpLength: %i >= numlumps", lump);
 
     return lumpinfo[lump].size;
@@ -368,7 +368,7 @@ void W_ReadLump(int lump, void *dest) {
     lumpinfo_t *l;
     int handle;
 
-    if (lump >= numlumps)
+    if (static_cast<unsigned int>(lump) >= numlumps)
         I_Error("W_ReadLump: %i >= numlumps", lump);
 
     l = lumpinfo + lump;
@@ -398,6 +398,7 @@ void W_ReadLump(int lump, void *dest) {
 // W_CacheLumpNum
 //
 void *W_CacheLumpNum(int lump, int tag) {
+    UNUSED
     byte *ptr;
 
     if ((unsigned)lump >= numlumps)
@@ -407,7 +408,7 @@ void *W_CacheLumpNum(int lump, int tag) {
         // read the lump in
 
         // printf ("cache miss on lump %i\n",lump);
-        ptr = Z_Malloc(W_LumpLength(lump), tag, &lumpcache[lump]);
+        ptr = static_cast<byte*>(Z_Malloc(W_LumpLength(lump), tag, &lumpcache[lump]));
         W_ReadLump(lump, lumpcache[lump]);
     } else {
         // printf ("cache hit on lump %i\n",lump);
@@ -420,7 +421,9 @@ void *W_CacheLumpNum(int lump, int tag) {
 //
 // W_CacheLumpName
 //
-void *W_CacheLumpName(char *name, int tag) { return W_CacheLumpNum(W_GetNumForName(name), tag); }
+void *W_CacheLumpName(const char *name, int tag) {
+    return W_CacheLumpNum(W_GetNumForName(name), tag);
+}
 
 //
 // W_Profile
@@ -429,7 +432,7 @@ int info[2500][10];
 int profilecount;
 
 void W_Profile(void) {
-    int i;
+    unsigned int i;
     memblock_t *block;
     void *ptr;
     char ch;

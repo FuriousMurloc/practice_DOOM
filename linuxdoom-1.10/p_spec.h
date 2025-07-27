@@ -28,7 +28,11 @@
 //
 // End-level timer (-TIMER option)
 //
-extern boolean levelTimer;
+#include "d_player.h"
+#include "doomtype.h"
+#include "p_mobj.h"
+#include "r_defs.h"
+extern bool levelTimer;
 extern int levelTimeCount;
 
 //      Define values for map objects

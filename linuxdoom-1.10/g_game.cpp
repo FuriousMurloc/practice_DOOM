@@ -203,7 +203,8 @@ int bodyqueslot;
 void *statcopy; // for statistics driver
 
 int G_CmdChecksum(ticcmd_t *cmd) {
-    int i;
+
+    unsigned int i;
     int sum = 0;
 
     for (i = 0; i < sizeof(*cmd) / 4 - 1; i++)
@@ -404,7 +405,7 @@ void G_DoLoadLevel(void) {
 
     // DOOM determines the sky texture to be used
     // depending on the current episode, and the game version.
-    if ((gamemode == commercial) || (gamemode == pack_tnt) || (gamemode == pack_plut)) {
+    if ((gamemode == commercial) || (gamemode == retail)) {
         skytexture = R_TextureNumForName("SKY3");
         if (gamemap < 12)
             skytexture = R_TextureNumForName("SKY1");
@@ -415,7 +416,7 @@ void G_DoLoadLevel(void) {
     levelstarttic = gametic; // for time calculation
 
     if (wipegamestate == GS_LEVEL)
-        wipegamestate = -1; // force a wipe
+        wipegamestate = GS_WIPE; // force a wipe
 
     gamestate = GS_LEVEL;
 
@@ -436,8 +437,8 @@ void G_DoLoadLevel(void) {
     joyxmove = joyymove = 0;
     mousex = mousey = 0;
     sendpause = sendsave = paused = false;
-    memset(mousebuttons, 0, sizeof(mousebuttons));
-    memset(joybuttons, 0, sizeof(joybuttons));
+    memset(mousebuttons, 0, sizeof(&mousebuttons));
+    memset(joybuttons, 0, sizeof(&joybuttons));
 }
 
 //
@@ -657,6 +658,8 @@ void G_Ticker(void) {
     case GS_DEMOSCREEN:
         D_PageTicker();
         break;
+    default:
+        break;
     }
 }
 
@@ -671,6 +674,7 @@ void G_Ticker(void) {
 // Called by the game initialization functions.
 //
 void G_InitPlayer(int player) {
+    UNUSED
     player_t *p;
 
     // set up the saved info
@@ -1052,6 +1056,7 @@ void G_LoadGame(char *name) {
 #define VERSIONSIZE 16
 
 void G_DoLoadGame(void) {
+    UNUSED
     int length;
     int i;
     int a, b, c;
@@ -1065,11 +1070,12 @@ void G_DoLoadGame(void) {
     // skip the description field
     memset(vcheck, 0, sizeof(vcheck));
     sprintf(vcheck, "version %i", VERSION);
-    if (strcmp(save_p, vcheck))
+
+    if (strcmp(reinterpret_cast<const char *>(save_p), vcheck))
         return; // bad version
     save_p += VERSIONSIZE;
 
-    gameskill = *save_p++;
+    gameskill = static_cast<skill_t>(*save_p++);
     gameepisode = *save_p++;
     gamemap = *save_p++;
     for (i = 0; i < MAXPLAYERS; i++)
@@ -1122,9 +1128,10 @@ void G_DoSaveGame(void) {
     int i;
 
     if (M_CheckParm("-cdrom"))
-        sprintf(name, "c:\\doomdata\\" SAVEGAMENAME "%d.dsg", savegameslot);
+        sprintf(name, std::string("c:\\doomdata\\").append(SAVEGAMENAME).append("%d.dsg").c_str(),
+                savegameslot);
     else
-        sprintf(name, SAVEGAMENAME "%d.dsg", savegameslot);
+        sprintf(name, std::string(SAVEGAMENAME).append("%d.dsg").c_str(), savegameslot);
     description = savedescription;
 
     save_p = savebuffer = screens[1] + 0x4000;
@@ -1342,7 +1349,7 @@ void G_RecordDemo(char *name) {
     i = M_CheckParm("-maxdemo");
     if (i && i < myargc - 1)
         maxsize = atoi(myargv[i + 1]) * 1024;
-    demobuffer = Z_Malloc(maxsize, PU_STATIC, NULL);
+    demobuffer = static_cast<byte *>(Z_Malloc(maxsize, PU_STATIC, NULL));
     demoend = demobuffer + maxsize;
 
     demorecording = true;
@@ -1371,9 +1378,9 @@ void G_BeginRecording(void) {
 // G_PlayDemo
 //
 
-char *defdemoname;
+const char *defdemoname;
 
-void G_DeferedPlayDemo(char *name) {
+void G_DeferedPlayDemo(const char *name) {
     defdemoname = name;
     gameaction = ga_playdemo;
 }
@@ -1383,14 +1390,14 @@ void G_DoPlayDemo(void) {
     int i, episode, map;
 
     gameaction = ga_nothing;
-    demobuffer = demo_p = W_CacheLumpName(defdemoname, PU_STATIC);
+    demobuffer = demo_p = static_cast<byte *>(W_CacheLumpName(defdemoname, PU_STATIC));
     if (*demo_p++ != VERSION) {
         fprintf(stderr, "Demo is from a different game version!\n");
         gameaction = ga_nothing;
         return;
     }
 
-    skill = *demo_p++;
+    skill = static_cast<skill_t>(*demo_p++);
     episode = *demo_p++;
     map = *demo_p++;
     deathmatch = *demo_p++;

@@ -9,7 +9,10 @@ CC=  g++  # gcc or g++
 
 CFLAGS= \
 	-g -Wall -Wpedantic -Werror --std=c++23 \
-	-DNORMALUNIX -DLINUX -DUNUSED=[[maybe_unused]] #  -DUSEASM 
+	-DNORMALUNIX -DLINUX -DUNUSED=[[maybe_unused]]  \
+	-fsanitize=address -fsanitize=undefined 
+	#  -DUSEASM 
+
 LDFLAGS=-L/usr/X11R6/lib
 LIBS=-lXext -lX11 -lnsl -lm
 

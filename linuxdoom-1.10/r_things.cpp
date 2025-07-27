@@ -81,7 +81,7 @@ int numsprites;
 
 spriteframe_t sprtemp[29];
 int maxframe;
-char *spritename;
+const char *spritename;
 
 //
 // R_InstallSpriteLump
@@ -152,8 +152,8 @@ void R_InstallSpriteLump(int lump, unsigned frame, unsigned rotation, boolean fl
 //  letter/number appended.
 // The rotation character can be 0 to signify no rotations.
 //
-void R_InitSpriteDefs(char **namelist) {
-    char **check;
+void R_InitSpriteDefs(const char **namelist) {
+    const char **check;
     int i;
     int l;
     int intname;
@@ -173,7 +173,7 @@ void R_InitSpriteDefs(char **namelist) {
     if (!numsprites)
         return;
 
-    sprites = Z_Malloc(numsprites * sizeof(*sprites), PU_STATIC, NULL);
+    sprites = static_cast<spritedef_t*>(Z_Malloc(numsprites * sizeof(*sprites), PU_STATIC, NULL));
 
     start = firstspritelump - 1;
     end = lastspritelump + 1;
@@ -244,7 +244,7 @@ void R_InitSpriteDefs(char **namelist) {
 
         // allocate space for the frames present and copy sprtemp to it
         sprites[i].numframes = maxframe;
-        sprites[i].spriteframes = Z_Malloc(maxframe * sizeof(spriteframe_t), PU_STATIC, NULL);
+        sprites[i].spriteframes = static_cast<spriteframe_t*>(Z_Malloc(maxframe * sizeof(spriteframe_t), PU_STATIC, NULL));
         memcpy(sprites[i].spriteframes, sprtemp, maxframe * sizeof(spriteframe_t));
     }
 }
@@ -260,7 +260,7 @@ int newvissprite;
 // R_InitSprites
 // Called at program start.
 //
-void R_InitSprites(char **namelist) {
+void R_InitSprites(const char **namelist) {
     int i;
 
     for (i = 0; i < SCREENWIDTH; i++) {
@@ -347,7 +347,7 @@ void R_DrawVisSprite(vissprite_t *vis, int x1, int x2) {
     fixed_t frac;
     patch_t *patch;
 
-    patch = W_CacheLumpNum(vis->patch + firstspritelump, PU_CACHE);
+    patch = static_cast<patch_t*>(W_CacheLumpNum(vis->patch + firstspritelump, PU_CACHE));
 
     dc_colormap = vis->colormap;
 
@@ -438,7 +438,7 @@ void R_ProjectSprite(mobj_t *thing) {
 
     // decide which patch to use for sprite relative to player
 #ifdef RANGECHECK
-    if ((unsigned)thing->sprite >= numsprites)
+    if ((int)thing->sprite >= numsprites)
         I_Error("R_ProjectSprite: invalid sprite number %i ", thing->sprite);
 #endif
     sprdef = &sprites[thing->sprite];
@@ -571,7 +571,7 @@ void R_DrawPSprite(pspdef_t *psp) {
 
     // decide which patch to use
 #ifdef RANGECHECK
-    if ((unsigned)psp->state->sprite >= numsprites)
+    if ((int)psp->state->sprite >= numsprites)
         I_Error("R_ProjectSprite: invalid sprite number %i ", psp->state->sprite);
 #endif
     sprdef = &sprites[psp->state->sprite];
@@ -694,10 +694,11 @@ void R_SortVisSprites(void) {
         ds->prev = ds - 1;
     }
 
-    vissprites[0].prev = &unsorted;
-    unsorted.next = &vissprites[0];
-    (vissprite_p - 1)->next = &unsorted;
-    unsorted.prev = vissprite_p - 1;
+    //TODO!!!: fix this with an array
+    //vissprites[0].prev = &unsorted;
+    //unsorted.next = &vissprites[0];
+    //(vissprite_p - 1)->next = &unsorted;
+    //unsorted.prev = vissprite_p - 1;
 
     // pull the vissprites out by scale
     // best = 0;		// shut up the compiler warning

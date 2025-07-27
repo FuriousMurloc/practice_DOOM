@@ -43,15 +43,15 @@
 //  relative to current position.
 // Path names are OS-sensitive.
 //
-#define DEVMAPS "devmaps"
-#define DEVDATA "devdata"
+constexpr const char *DEVMAPS = "devmaps";
+constexpr const char *DEVDATA = "devdata";
 
 // Not done in french?
 
 // QuitDOOM messages
 #define NUM_QUITMESSAGES 22
 
-extern char *endmsg[];
+extern const char *endmsg[];
 
 #endif
 //-----------------------------------------------------------------------------

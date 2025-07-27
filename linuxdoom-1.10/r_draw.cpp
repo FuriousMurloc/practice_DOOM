@@ -23,6 +23,7 @@
 //
 //-----------------------------------------------------------------------------
 
+#include <memory>
 static const char rcsid[] = "$Id: r_draw.c,v 1.4 1997/02/03 16:47:55 b1 Exp $";
 
 #include "doomdef.h"
@@ -411,8 +412,11 @@ void R_DrawTranslatedColumn(void) {
 void R_InitTranslationTables(void) {
     int i;
 
-    translationtables = Z_Malloc(256 * 3 + 255, PU_STATIC, 0);
-    translationtables = (byte *)(((int)translationtables + 255) & ~255);
+    size_t alloc_size = 256 * 3 + 255;
+    auto tables_ptr = Z_Malloc(alloc_size, PU_STATIC, 0);
+    translationtables = static_cast<byte*>(std::align(256,3,tables_ptr, alloc_size));
+    //translationtables = Z_Malloc(256 * 3 + 255, PU_STATIC, 0);
+    //translationtables = ((translationtables + 255) & ~255);
 
     // translate just the 16 green colors
     for (i = 0; i < 256; i++) {
@@ -667,7 +671,7 @@ void R_FillBackScreen(void) {
     else
         name = name1;
 
-    src = W_CacheLumpName(name, PU_CACHE);
+    src = static_cast<byte*>(W_CacheLumpName(name, PU_CACHE));
     dest = screens[1];
 
     for (y = 0; y < SCREENHEIGHT - SBARHEIGHT; y++) {
@@ -682,33 +686,33 @@ void R_FillBackScreen(void) {
         }
     }
 
-    patch = W_CacheLumpName("brdr_t", PU_CACHE);
+    patch = static_cast<patch_t*>(W_CacheLumpName("brdr_t", PU_CACHE));
 
     for (x = 0; x < scaledviewwidth; x += 8)
         V_DrawPatch(viewwindowx + x, viewwindowy - 8, 1, patch);
-    patch = W_CacheLumpName("brdr_b", PU_CACHE);
+    patch = static_cast<patch_t*>(W_CacheLumpName("brdr_b", PU_CACHE));
 
     for (x = 0; x < scaledviewwidth; x += 8)
         V_DrawPatch(viewwindowx + x, viewwindowy + viewheight, 1, patch);
-    patch = W_CacheLumpName("brdr_l", PU_CACHE);
+    patch = static_cast<patch_t*>(W_CacheLumpName("brdr_l", PU_CACHE));
 
     for (y = 0; y < viewheight; y += 8)
         V_DrawPatch(viewwindowx - 8, viewwindowy + y, 1, patch);
-    patch = W_CacheLumpName("brdr_r", PU_CACHE);
+    patch = static_cast<patch_t*>(W_CacheLumpName("brdr_r", PU_CACHE));
 
     for (y = 0; y < viewheight; y += 8)
         V_DrawPatch(viewwindowx + scaledviewwidth, viewwindowy + y, 1, patch);
 
     // Draw beveled edge.
-    V_DrawPatch(viewwindowx - 8, viewwindowy - 8, 1, W_CacheLumpName("brdr_tl", PU_CACHE));
+    V_DrawPatch(viewwindowx - 8, viewwindowy - 8, 1, static_cast<patch_t*>(W_CacheLumpName("brdr_tl", PU_CACHE)));
 
     V_DrawPatch(viewwindowx + scaledviewwidth, viewwindowy - 8, 1,
-                W_CacheLumpName("brdr_tr", PU_CACHE));
+                static_cast<patch_t*>(W_CacheLumpName("brdr_tr", PU_CACHE)));
 
-    V_DrawPatch(viewwindowx - 8, viewwindowy + viewheight, 1, W_CacheLumpName("brdr_bl", PU_CACHE));
+    V_DrawPatch(viewwindowx - 8, viewwindowy + viewheight, 1, static_cast<patch_t*>(W_CacheLumpName("brdr_bl", PU_CACHE)));
 
     V_DrawPatch(viewwindowx + scaledviewwidth, viewwindowy + viewheight, 1,
-                W_CacheLumpName("brdr_br", PU_CACHE));
+                static_cast<patch_t*>(W_CacheLumpName("brdr_br", PU_CACHE)));
 }
 
 //

@@ -138,7 +138,7 @@ int EV_DoPlat(line_t *line, plattype_e type, int amount) {
 
         // Find lowest & highest floors around sector
         rtn = 1;
-        plat = Z_Malloc(sizeof(*plat), PU_LEVSPEC, 0);
+        plat = static_cast<plat_t *>(Z_Malloc(sizeof(*plat), PU_LEVSPEC, 0));
         P_AddThinker(&plat->thinker);
 
         plat->type = type;
@@ -210,7 +210,7 @@ int EV_DoPlat(line_t *line, plattype_e type, int amount) {
                 plat->high = sec->floorheight;
 
             plat->wait = 35 * PLATWAIT;
-            plat->status = P_Random() & 1;
+            plat->status = static_cast<plat_e>(P_Random() & 1);
 
             S_StartSound((mobj_t *)&sec->soundorg, sfx_pstart);
             break;

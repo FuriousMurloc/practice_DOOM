@@ -115,7 +115,8 @@ void R_MapPlane(int y, int x1, int x2) {
     unsigned index;
 
 #ifdef RANGECHECK
-    if (x2 < x1 || x1 < 0 || x2 >= viewwidth || (unsigned)y > viewheight) {
+    if (x2 < x1 || x1 < 0 || x2 >= viewwidth || y > viewheight) {
+    //if (x2 < x1 || x1 < 0 || x2 >= viewwidth || (unsigned)y > viewheight) {
         I_Error("R_MapPlane: %i, %i at %i", x1, x2, y);
     }
 #endif
@@ -345,7 +346,7 @@ void R_DrawPlanes(void) {
         }
 
         // regular flat
-        ds_source = W_CacheLumpNum(firstflat + flattranslation[pl->picnum], PU_STATIC);
+        ds_source = static_cast<byte*>(W_CacheLumpNum(firstflat + flattranslation[pl->picnum], PU_STATIC));
 
         planeheight = abs(pl->height - viewz);
         light = (pl->lightlevel >> LIGHTSEGSHIFT) + extralight;
