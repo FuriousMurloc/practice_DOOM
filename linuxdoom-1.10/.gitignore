@@ -1,0 +1,3 @@
+.cache
+linux/*
+-linux/compile_commands.json
