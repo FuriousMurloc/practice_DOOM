@@ -1,0 +1,4 @@
+BasedOnStyle: LLVM  # You can choose any base style you prefer
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 100
